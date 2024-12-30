@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 interface CalculatorPresenterProps {
   input: string;
@@ -75,13 +76,12 @@ const CalculatorPresenter: React.FC<CalculatorPresenterProps> = ({
       </div>
       <div className="grid grid-cols-4 gap-2">
         {buttons.map((button, index) => (
-          <button
-            className={`${button.bgColor} p-2 rounded-sm active:bg-green-200`}
-            onClick={button.onClick}
+          <Button
             key={index}
-          >
-            {button.label}
-          </button>
+            label={button.label}
+            bgColor={button.bgColor}
+            onClick={button.onClick}
+          />
         ))}
       </div>
     </div>
